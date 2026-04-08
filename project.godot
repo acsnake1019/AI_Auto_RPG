@@ -1,7 +1,8 @@
 config_version=5
-[xapplication]
+
+[application]
 config/name="AI Auto RPG"
-run/main_scene="res://world.tscn
+run/main_scene="res://world.tscn"
 
 [autoload]
 GameManager="res://game_manager.gd"
