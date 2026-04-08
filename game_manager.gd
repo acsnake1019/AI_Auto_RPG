@@ -1,7 +1,7 @@
 extends Node
 
 var gold = 0
-var exp = 0
+var current_exp = 0
 var level = 1
 var exp_to_next_level = 100
 
@@ -13,12 +13,12 @@ var current_hp = 100
 var upgrade_cost_base = 10
 
 func add_exp(amount):
-	exp += amount
-	if exp >= exp_to_next_level:
+	current_exp += amount
+	if current_exp >= exp_to_next_level:
 		level_up()
 
 func level_up():
-	exp -= exp_to_next_level
+	current_exp -= exp_to_next_level
 	level += 1
 	exp_to_next_level = int(exp_to_next_level * 1.5)
 	print("🎉 等級提升！目前等級: ", level)
@@ -37,5 +37,5 @@ func upgrade_attribute(attr_name):
 		return true
 	return false
 
-func get_upgrade_cost(attr_name):
+func get_upgrade_cost(_attr_name):
 	return upgrade_cost_base * level
