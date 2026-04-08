@@ -7,7 +7,7 @@ extends Control
 func _process(delta):
 	gold_label.text = "💰 金幣: " + str(GameManager.gold)
 	level_label.text = "Lv. " + str(GameManager.level)
-	exp_bar.value = (float(GameManager.exp) / GameManager.exp_to_next_level) * 100
+	exp_bar.value = (float(GameManager.current_exp) / GameManager.exp_to_next_level) * 100
 
 func _on_upgrade_atk_pressed():
 	if GameManager.upgrade_attribute("attack"):
